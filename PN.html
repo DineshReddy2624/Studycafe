@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Notes - Study Cafe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* styles3.css */
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #444;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: block;
+        }
+
+        .nav-menu a:hover {
+            background-color: #2c3e50;
+        }
+
+        .nav-menu ul ul {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            padding: 0;
+            margin: 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .nav-menu li:hover>ul {
+            display: block;
+        }
+
+        .nav-menu ul ul li {
+            width: 150px;
+        }
+
+        .nav-menu ul ul a {
+            padding: 8px 15px;
+        }
+
+        .notes-hero {
+            text-align: center;
+            padding: 100px 30px;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://source.unsplash.com/1600x900/?physics,education');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .notes-hero h2 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .notes-hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #34495e;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+            border-radius: 2px;
+        }
+
+        .notes-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .note-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .note-content {
+            flex: 1;
+        }
+
+        .note-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .note-content p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .view-details-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 18px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .view-details-button i {
+            margin-left: 5px;
+        }
+
+        .view-details-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer .social-links a {
+            color: #ecf0f1;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu li {
+                margin: 8px 0;
+            }
+
+            .note-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .view-details-button {
+                margin-top: 10px;
+            }
+
+            .notes-hero h2 {
+                font-size: 2.5em;
+            }
+
+            .notes-hero p {
+                font-size: 1em;
+            }
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .note-item.highlighted {
+            background-color: #e0f7fa;
+            /* Light blue highlight */
+            border: 1px solid #4dd0e1;
+            border-radius: 8px;
+        }
+
+        .feedback-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .feedback-modal {display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+
+        .feedback-modal textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .feedback-modal button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .feedback-modal .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .textbook-download {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .textbook-download a {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .textbook-download a:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://github.com/AbdulAzizes04/skills-github-pages/blob/main/.github/WhatsApp%20Image%202025-01-01%20at%2022.11.52_7937caa6.jpg?raw=true"
+                alt="Study Cafe Logo" class="logo">
+            <h1>STUDY CAFE</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="web2.html">Home</a></li>
+                <li><a href="1st year.html">1ST YEAR</a></li>
+                <li>
+                    <a href="branch.html">2ND YEAR ▼</a>
+                    <ul>
+                        <li><a href="secondcse.html">CSE</a></li>
+                        <li><a href="secondaids.html">AI&DS</a></li>
+                        <li><a href="secondaiml.html">AI&ML</a></li>
+                        <li><a href="secondds.html">CSE(DS)</a></li>
+                        <li><a href="secondai.html">CSE(AI)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="branch1.html">3RD YEAR ▼</a>
+                    <ul>
+                        <li><a href="thirdcse.html">CSE</a></li>
+                        <li><a href="thirdaids.html">AI&DS</a></li>
+                        <li><a href="thirdaiml.html">AI&ML</a></li>
+                        <li><a href="thirdds.html">CSE(DS)</a></li>
+                        <li><a href="thirdai.html">CSE(AI)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="branch2.html">4TH YEAR ▼</a>
+                    <ul>
+                        <li><a href="fourthcse.html">CSE</a></li>
+                        <li><a href="fourthaids.html">AI&DS</a></li>
+                        <li><a href="fourthaiml.html">AI&ML</a></li>
+                        <li><a href="fourthds.html">CSE(DS)</a></li>
+                        <li><a href="fourthai.html">CSE(AI)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="notes-hero">
+        <h2>Dive into the World of Physics</h2>
+        <p>Explore our curated collection of physics notes, designed to simplify complex concepts and inspire your learning journey.</p>
+    </div>
+
+    <section class="section-container">
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search notes...">
+        </div>
+
+        <h2 class="section-title">Physics Notes</h2>
+        <ul class="notes-list" id="notes-list">
+            <div class="textbook-download">
+                <a href="https://drive.google.com/file/d/1j21YuY5-ehC0AQoj_efVLHeEwGjpgjSq/view?usp=sharing" target="_blank">Charles Kittel, Introduction to Solid State Physics, Wiley Publications, 2011</a>
+            </div>
+            <div class="textbook-download">
+                <a href="https://drive.google.com/file/d/13Ooi4DWi8ciSUVrBEz8z9TRoVUpZrJkT/view?usp=sharing" target="_blank">T Pradeep, A Textbook of Nano Science and Nano Technology, Tata McGraw Hill, 2013</a>
+            </div>
+            <li class="note-item">
+                <div class="note-content">
+                    <h3>Classical Mechanics</h3>
+                    <p>Explore the principles governing motion, forces, and energy in classical systems.</p>
+                </div>
+                <a href="mechanics_details.html" class="view-details-button">View Details <i class="fas fa-arrow-right"></i></a>
+            </li>
+            <li class="note-item">
+                <div class="note-content">
+                    <h3>Electromagnetism</h3>
+                    <p>Delve into the concepts of electric and magnetic fields, electromagnetic induction, and more.</p>
+                </div>
+                <a href="electromagnetism_details.html" class="view-details-button">View Details <i class="fas fa-arrow-right"></i></a>
+            </li>
+            <li class="note-item">
+                <div class="note-content">
+                    <h3>Thermodynamics</h3>
+                    <p>Understand the laws governing heat, work, and energy transfer in thermodynamic systems.</p>
+                </div>
+                <a href="thermodynamics_details.html" class="view-details-button">View Details <i class="fas fa-arrow-right"></i></a>
+            </li>
+            <li class="note-item">
+                <div class="note-content">
+                    <h3>Quantum Physics</h3>
+                    <p>Explore the fascinating realm of quantum mechanics, atomic, and nuclear physics.</p>
+                </div>
+                <a href="quantum_details.html" class="view-details-button">View Details <i class="fas fa-arrow-right"></i></a>
+            </li>
+            <li class="note-item">
+                <div class="note-content">
+                    <h3>Optics and Waves</h3>
+                    <p>Study the behavior of light and other wave phenomena, including reflection, refraction, and diffraction.</p>
+                </div>
+                <a href="optics_details.html" class="view-details-button">View Details <i class="fas fa-arrow-right"></i></a>
+            </li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 Study Cafe | Your Path to Knowledge</p>
+    </footer>
+
+    <button class="feedback-button">Feedback</button>
+
+    <div class="feedback-modal">
+        <button class="close-button">&times;</button>
+        <h3>Provide Feedback</h3>
+        <textarea id="feedback-text" placeholder="Enter your feedback here..."></textarea>
+        <button id="submit-feedback">Submit</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const searchInput = document.getElementById('search-input');
+        const notesList = document.getElementById('notes-list');
+        const noteItems = document.querySelectorAll('.note-item');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            noteItems.forEach(noteItem => {
+                const title = noteItem.querySelector('h3').textContent.toLowerCase();
+                const description = noteItem.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    noteItem.style.display = 'flex';
+                    noteItem.classList.add('highlighted');
+                } else {
+                    noteItem.style.display = 'none';
+                    noteItem.classList.remove('highlighted');
+                }
+            });
+        });
+
+        const feedbackButton = document.querySelector('.feedback-button');
+        const feedbackModal = document.querySelector('.feedback-modal');
+        const closeButton = document.querySelector('.close-button');
+        const submitFeedback = document.getElementById('submit-feedback');
+        const feedbackText = document.getElementById('feedback-text');
+
+        feedbackButton.addEventListener('click', () => {
+            feedbackModal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', () => {
+            feedbackModal.style.display = 'none';
+        });
+
+        submitFeedback.addEventListener('click', () => {
+            const feedback = feedbackText.value;
+            if (feedback.trim() !== "") {
+                alert('Thank you for your feedback!');
+                feedbackText.value = ''; // Clear the textarea
+                feedbackModal.style.display = 'none'; // Close the modal
+            } else {
+                alert('Please enter your feedback.');
+            }
+        });
+    </script>
+</body>
+
+</html>

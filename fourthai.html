@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Year CSE(AI) - Computer Science & Engineering (Artificial Intelligence)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles3.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #e8f5e9;
+        }
+
+        .tab-pane a {
+            display: block;
+        }
+
+        .branch-hero {
+            background: linear-gradient(135deg, #a5d6a7, #4caf50);
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .branch-hero img {
+            max-width: 200px;
+            margin: 30px 0;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .branch-hero h2 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .branch-hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .tab-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+            padding: 0;
+            list-style: none;
+            background-color: white;
+        }
+
+        .tab-navigation .tab {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: white;
+        }
+
+        .tab-navigation .tab:hover {
+            background-color: rgba(230, 230, 230, 0.8);
+            color: #4caf50;
+        }
+
+        .tab-navigation .tab.active {
+            border-bottom: 3px solid #4caf50;
+            color: #4caf50;
+            background-color: white;
+        }
+
+        .tab-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: white;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-pane a {
+            display: block;
+            padding: 10px 15px;
+            background-color: rgba(240, 240, 240, 0.8);
+            color: #333;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-pane a:hover {
+            background-color: #4caf50;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .tab-navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-navigation .tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://github.com/AbdulAzizes04/skills-github-pages/blob/main/.github/WhatsApp%20Image%202025-01-01%20at%2022.11.52_7937caa6.jpg?raw=true"
+                alt="Study Cafe Logo" class="logo">
+            <h1>STUDY CAFE</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="web2.html">Home</a></li>
+                <li><a href="1st year.html">1ST YEAR</a></li>
+                <li>
+                    <a href="branch.html">2ND YEAR ▼</a>
+                    <ul>
+                        <li><a href="secondcse.html">CSE</a></li>
+                        <li><a href="secondaids.html">AI&DS</a></li>
+                        <li><a href="secondaiml.html">AI&ML</a></li>
+                        <li><a href="secondds.html">CSE(DS)</a></li>
+                        <li><a href="secondai.html">CSE(AI)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="branch1.html">3RD YEAR ▼</a>
+                    <ul>
+                        <li><a href="thirdcse.html">CSE</a></li>
+                        <li><a href="thirdaids.html">AI&DS</a></li>
+                        <li><a href="thirdaiml.html">AI&ML</a></li>
+                        <li><a href="thirdds.html">CSE(DS)</a></li>
+                        <li><a href="thirdai.html">CSE(AI)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="branch2.html">4TH YEAR ▼</a>
+                    <ul>
+                        <li><a href="fourthcse.html">CSE</a></li>
+                        <li><a href="fourthaids.html">AI&DS</a></li>
+                        <li><a href="fourthaiml.html">AI&ML</a></li>
+                        <li><a href="fourthds.html">CSE(DS)</a></li>
+                        <li><a href="fourthai.html">CSE(AI)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="branch-hero">
+        <h2>4th Year CSE(AI) - Computer Science & Engineering (Artificial Intelligence)</h2>
+        <p>Specialize in artificial intelligence and its integration with computer science engineering.</p>
+    </div>
+
+    <section>
+        <div class="tab-container">
+            <ul class="tab-navigation">
+                <li class="tab active" data-tab="theory">THEORY</li>
+                <li class="tab" data-tab="lab">LAB</li>
+                <li class="tab" data-tab="projects">PROJECTS</li>
+                <li class="tab" data-tab="placement">PLACEMENT PREP</li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="theory" class="tab-pane active">
+                    <div>
+                        <a href="#">Advanced AI Planning</a>
+                        <a href="#">Knowledge Representation & Reasoning</a>
+                        <a href="#">Robotics and Autonomous Systems</a>
+                        <a href="#">AI in Game Development</a>
+                        <a href="#">Cognitive Computing</a>
+                        <a href="#">AI and Human-Computer Interaction</a>
+                    </div>
+                </div>
+                <div id="lab" class="tab-pane">
+                    <div>
+                        <a href="#">AI Planning Lab</a>
+                        <a href="#">Knowledge Representation Lab</a>
+                        <a href="#">Robotics and Automation Lab</a>
+                        <a href="#">AI Game Development Lab</a>
+                        <a href="#">Cognitive Computing Lab</a>
+                        <a href="#">AI HCI Lab</a>
+                    </div>
+                </div>
+                <div id="projects" class="tab-pane">
+                    <div>
+                        <a href="#">AI Planning Systems</a>
+                        <a href="#">Knowledge-Based Applications</a>
+                        <a href="#">Autonomous Robotics Projects</a>
+                        <a href="#">AI Game Development Projects</a>
+                        <a href="#">Cognitive Computing Applications</a><a href="#">AI-Driven User Interfaces</a>
+                    </div>
+                </div>
+                <div id="placement" class="tab-pane">
+                    <div>
+                        <a href="#">AI Job Interview Preparation</a>
+                        <a href="#">AI Engineer Roles</a>
+                        <a href="#">Building an AI Portfolio</a>
+                        <a href="#">Problem Solving with AI</a>
+                        <a href="#">Trends in AI Industry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <h2>Connect With Us</h2>
+            <center>
+                <p>We're here to help you in your 4th year.<br><br>
+                    Email: studycafe2025@gmail.com<br>
+                    Phone: +91-0123456789
+                </p>
+            </center>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Study Cafe | Your Academic Guide</p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.querySelectorAll('.tab-navigation .tab').forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+
+                    document.querySelectorAll('.tab-navigation .tab').forEach(tab => tab.classList.remove('active'));
+                    document.querySelectorAll('.tab-content .tab-pane').forEach(pane => pane.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        </script>
+    </section>
+</body>
+
+</html>
